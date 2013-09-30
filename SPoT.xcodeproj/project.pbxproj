@@ -23,6 +23,7 @@
 		271E9BA017F7E73700D9E8F0 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9B9F17F7E73700D9E8F0 /* FlickrFetcher.m */; };
 		271E9BA317F7EA5D00D9E8F0 /* FlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA217F7EA5D00D9E8F0 /* FlickrPhotoTVC.m */; };
 		271E9BA617F7EB1300D9E8F0 /* FlickrTagTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA517F7EB1300D9E8F0 /* FlickrTagTVC.m */; };
+		271E9BA917FA02E400D9E8F0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA817FA02E400D9E8F0 /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		271E9BA217F7EA5D00D9E8F0 /* FlickrPhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoTVC.m; sourceTree = "<group>"; };
 		271E9BA417F7EB1300D9E8F0 /* FlickrTagTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrTagTVC.h; sourceTree = "<group>"; };
 		271E9BA517F7EB1300D9E8F0 /* FlickrTagTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrTagTVC.m; sourceTree = "<group>"; };
+		271E9BA717FA02E400D9E8F0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		271E9BA817FA02E400D9E8F0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 		271E9B6D17F7E6C300D9E8F0 /* SPoT */ = {
 			isa = PBXGroup;
 			children = (
+				271E9BA717FA02E400D9E8F0 /* ImageViewController.h */,
+				271E9BA817FA02E400D9E8F0 /* ImageViewController.m */,
 				271E9B9C17F7E73700D9E8F0 /* FlickrFetcher */,
 				271E9BA117F7EA5D00D9E8F0 /* FlickrPhotoTVC.h */,
 				271E9BA217F7EA5D00D9E8F0 /* FlickrPhotoTVC.m */,
@@ -269,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271E9BA917FA02E400D9E8F0 /* ImageViewController.m in Sources */,
 				271E9B7817F7E6C300D9E8F0 /* AppDelegate.m in Sources */,
 				271E9BA317F7EA5D00D9E8F0 /* FlickrPhotoTVC.m in Sources */,
 				271E9BA017F7E73700D9E8F0 /* FlickrFetcher.m in Sources */,

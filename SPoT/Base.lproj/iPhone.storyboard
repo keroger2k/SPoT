@@ -102,6 +102,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EuA-fd-Tcs" kind="push" identifier="Show Image" id="yzx-U9-xqk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -113,7 +116,35 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lR7-8L-t7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-1121"/>
+            <point key="canvasLocation" x="259" y="-1121"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="1ya-9M-PoL">
+            <objects>
+                <viewController id="EuA-fd-Tcs" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="179-Gh-xFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="DlU-Yn-NAD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hM-Ju-HFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-BC-z8x">
+                                <rect key="frame" x="-1" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QJw-N9-7CT"/>
+                    <connections>
+                        <outlet property="scrollView" destination="GbT-BC-z8x" id="Mal-4y-WKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bC9-xS-9Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613" y="-1267"/>
         </scene>
         <!--Navigation Controller - Favorites-->
         <scene sceneID="ktF-0Z-c5j">
