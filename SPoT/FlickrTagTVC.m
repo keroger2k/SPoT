@@ -21,8 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.photos = [FlickrFetcher stanfordPhotos];
-    self.tags = [self parseTags];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("get flickr data", NULL);
+    dispatch_async(downloadQueue, ^{
+        self.photos = [FlickrFetcher stanfordPhotos];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.tags = [self parseTags];
+        });
+    });
 }
 
 - (void)setPhotos:(NSArray *)photos
