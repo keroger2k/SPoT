@@ -30,6 +30,12 @@
     });
 }
 
+- (NSMutableArray *)allTags
+{
+    if(!_allTags) _allTags = [[NSMutableArray alloc] init];
+    return _allTags;
+}
+
 - (void)setPhotos:(NSArray *)photos
 {
     _photos = photos;
@@ -42,14 +48,11 @@
 }
 
 - (NSArray *)parseTags {
-    self.allTags = [[NSMutableArray alloc] init];
     for (int i = 0; i < [self.photos count]; i++)
     {
         NSArray *photoTags = [self.photos[i][FLICKR_TAGS] componentsSeparatedByString:@" "];
         for (int ii = 0; ii < [photoTags count]; ii++) {
-            if(![photoTags[ii] isEqualToString:@"cs193pspot"] &&
-               ![photoTags[ii] isEqualToString:@"portrait"] &&
-               ![photoTags[ii] isEqualToString:@"landscape"]){
+            if(![@[ @"cs193pspot", @"portrait", @"landscape"] containsObject:photoTags[ii]]){
                 [self.allTags addObject:photoTags[ii]];
             }
         }
@@ -87,24 +90,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.tags count];
 }
-
-// a helper method that looks in the Model for the photo dictionary at the given row
-//  and gets the title out of it
 
 - (NSString *)titleForRow:(NSUInteger)row
 {
     return [self.tags[row] description]; // description because could be NSNull
-}
-
-// a helper method that looks in the Model for the photo dictionary at the given row
-//  and gets the owner of the photo out of it
-
-- (NSString *)subtitleForRow:(NSUInteger)row
-{
-    return [self.tags[row][FLICKR_PHOTO_OWNER] description]; // description because could be NSNull
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +103,6 @@
     static NSString *CellIdentifier = @"Flickr Tag";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     cell.textLabel.text = [self titleForRow:indexPath.row];
     int c = 0;
     

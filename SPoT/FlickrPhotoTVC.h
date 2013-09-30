@@ -11,10 +11,6 @@
 
 @interface FlickrPhotoTVC : UITableViewController
 
-// the Model for this VC
-// an array of dictionaries of Flickr information
-// obtained using Flickr API
-// (e.g. FlickrFetcher will obtain such an array of dictionaries)
 @property (nonatomic, strong) NSArray *photos; // of NSDictionary
 
 @end
