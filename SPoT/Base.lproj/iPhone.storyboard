@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC9-xS-9Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613" y="-1267"/>
+            <point key="canvasLocation" x="959" y="-699"/>
         </scene>
         <!--Navigation Controller - Favorites-->
         <scene sceneID="ktF-0Z-c5j">
@@ -162,22 +162,25 @@
             </objects>
             <point key="canvasLocation" x="-568" y="-1121"/>
         </scene>
-        <!--Table View Controller - Recents-->
+        <!--Recent ImagesTVC - Recents-->
         <scene sceneID="fdW-Xe-eSS">
             <objects>
-                <tableViewController id="8ap-r5-yaF" sceneMemberID="viewController">
+                <tableViewController id="8ap-r5-yaF" customClass="RecentImagesTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ksg-7p-fWw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6fm-Oh-se2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Recent Photo" id="6fm-Oh-se2">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fm-Oh-se2" id="NZO-do-sjN">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EuA-fd-Tcs" kind="push" identifier="Show Image" id="uOo-89-cba"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -185,6 +188,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recents" id="ojK-PV-xGa"/>
+                    <connections>
+                        <outlet property="recentImagesTableView" destination="ksg-7p-fWw" id="oY6-Jb-wYK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnH-Ej-obO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,4 +218,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="uOo-89-cba"/>
+    </inferredMetricsTieBreakers>
 </document>

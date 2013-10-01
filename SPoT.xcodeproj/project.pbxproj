@@ -24,6 +24,8 @@
 		271E9BA317F7EA5D00D9E8F0 /* FlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA217F7EA5D00D9E8F0 /* FlickrPhotoTVC.m */; };
 		271E9BA617F7EB1300D9E8F0 /* FlickrTagTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA517F7EB1300D9E8F0 /* FlickrTagTVC.m */; };
 		271E9BA917FA02E400D9E8F0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BA817FA02E400D9E8F0 /* ImageViewController.m */; };
+		271E9BAC17FB3F7800D9E8F0 /* RecentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BAB17FB3F7800D9E8F0 /* RecentResult.m */; };
+		271E9BAF17FB42B800D9E8F0 /* RecentImagesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 271E9BAE17FB42B800D9E8F0 /* RecentImagesTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		271E9BA517F7EB1300D9E8F0 /* FlickrTagTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrTagTVC.m; sourceTree = "<group>"; };
 		271E9BA717FA02E400D9E8F0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		271E9BA817FA02E400D9E8F0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		271E9BAA17FB3F7800D9E8F0 /* RecentResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentResult.h; sourceTree = "<group>"; };
+		271E9BAB17FB3F7800D9E8F0 /* RecentResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentResult.m; sourceTree = "<group>"; };
+		271E9BAD17FB42B800D9E8F0 /* RecentImagesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentImagesTVC.h; sourceTree = "<group>"; };
+		271E9BAE17FB42B800D9E8F0 /* RecentImagesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentImagesTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 				271E9B7917F7E6C300D9E8F0 /* iPhone.storyboard */,
 				271E9B7F17F7E6C300D9E8F0 /* Images.xcassets */,
 				271E9B6E17F7E6C300D9E8F0 /* Supporting Files */,
+				271E9BAA17FB3F7800D9E8F0 /* RecentResult.h */,
+				271E9BAB17FB3F7800D9E8F0 /* RecentResult.m */,
+				271E9BAD17FB42B800D9E8F0 /* RecentImagesTVC.h */,
+				271E9BAE17FB42B800D9E8F0 /* RecentImagesTVC.m */,
 			);
 			path = SPoT;
 			sourceTree = "<group>";
@@ -276,8 +286,10 @@
 			files = (
 				271E9BA917FA02E400D9E8F0 /* ImageViewController.m in Sources */,
 				271E9B7817F7E6C300D9E8F0 /* AppDelegate.m in Sources */,
+				271E9BAC17FB3F7800D9E8F0 /* RecentResult.m in Sources */,
 				271E9BA317F7EA5D00D9E8F0 /* FlickrPhotoTVC.m in Sources */,
 				271E9BA017F7E73700D9E8F0 /* FlickrFetcher.m in Sources */,
+				271E9BAF17FB42B800D9E8F0 /* RecentImagesTVC.m in Sources */,
 				271E9BA617F7EB1300D9E8F0 /* FlickrTagTVC.m in Sources */,
 				271E9B7417F7E6C300D9E8F0 /* main.m in Sources */,
 			);
