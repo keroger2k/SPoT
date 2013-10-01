@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SPoT/ImageViewController.m"
-            timestampString = "402347929.500475"
+            timestampString = "402350563.725631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-resetImage"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SPoT/ImageViewController.m"
-            timestampString = "402347952.645852"
+            timestampString = "402350563.725631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-resetImage"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,6 +154,22 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "-initFromPropertyList:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SPoT/ImageViewController.m"
+            timestampString = "402350583.009917"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-didRotateFromInterfaceOrientation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

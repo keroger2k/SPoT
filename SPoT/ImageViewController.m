@@ -11,6 +11,7 @@
 @interface ImageViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImage *image;
 @end
 
 @implementation ImageViewController
@@ -19,6 +20,16 @@
 {
     _imageURL = imageURL;
     [self resetImage];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if (self.image) {
+        self.scrollView.zoomScale = 1.0;
+        self.scrollView.contentSize = self.image.size;
+        self.imageView.image = self.image;
+        self.imageView.frame = CGRectMake(0, 0, self.image.size.width + 100, self.image.size.height + 100);
+    }
 }
 
 - (void)resetImage
@@ -30,13 +41,13 @@
         dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
         dispatch_async(downloadQueue, ^{
             NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
-            UIImage *image = [[UIImage alloc] initWithData:imageData];
+            self.image = [[UIImage alloc] initWithData:imageData];
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (image) {
+                if (self.image) {
                     self.scrollView.zoomScale = 1.0;
-                    self.scrollView.contentSize = image.size;
-                    self.imageView.image = image;
-                    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+                    self.scrollView.contentSize = self.image.size;
+                    self.imageView.image = self.image;
+                    self.imageView.frame = CGRectMake(0, 0, self.image.size.width, self.image.size.height);
                 }
             });
         });
@@ -59,6 +70,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.scrollView addSubview:self.imageView];
     self.scrollView.minimumZoomScale = 0.2;
     self.scrollView.maximumZoomScale = 5.0;
