@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation ImageViewController
@@ -38,6 +39,7 @@
         self.scrollView.contentSize = CGSizeZero;
         self.imageView.image = nil;
         
+        [self.spinner startAnimating];
         dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
         dispatch_async(downloadQueue, ^{
             NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
@@ -49,6 +51,7 @@
                     self.imageView.image = self.image;
                     self.imageView.frame = CGRectMake(0, 0, self.image.size.width, self.image.size.height);
                 }
+                [self.spinner stopAnimating];
             });
         });
     }

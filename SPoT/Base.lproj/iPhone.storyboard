@@ -61,12 +61,20 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Yxr-Oq-Dgt" id="dzZ-up-BZX"/>
+                            <outlet property="dataSource" destination="Yxr-Oq-Dgt" id="6IP-ul-kUZ"/>
+                            <outlet property="delegate" destination="Yxr-Oq-Dgt" id="MRG-fa-0of"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SPoT" id="yVw-Zl-nNa"/>
+                    <connections>
+                        <outlet property="spinner" destination="C0Y-va-nuU" id="AZH-c1-wk5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trQ-w0-FBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="C0Y-va-nuU">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="-129" y="-1121"/>
         </scene>
@@ -123,17 +131,29 @@
             <objects>
                 <viewController id="EuA-fd-Tcs" customClass="ImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fFK-6X-L90"/>
-                        <viewControllerLayoutGuide type="bottom" id="SJ4-Ok-pCH"/>
+                        <viewControllerLayoutGuide type="top" id="hxZ-iX-0hb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xps-lu-YVi"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="GbT-BC-z8x">
+                    <view key="view" contentMode="scaleToFill" id="TnP-Lq-INM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </scrollView>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-BC-z8x">
+                                <rect key="frame" x="0.0" y="-54" width="320" height="676"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dqh-aX-hSF">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
                     <navigationItem key="navigationItem" id="QJw-N9-7CT"/>
                     <connections>
                         <outlet property="scrollView" destination="GbT-BC-z8x" id="Mal-4y-WKS"/>
+                        <outlet property="spinner" destination="Dqh-aX-hSF" id="V5v-fV-Fbt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC9-xS-9Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,6 +249,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uOo-89-cba"/>
+        <segue reference="yzx-U9-xqk"/>
     </inferredMetricsTieBreakers>
 </document>
