@@ -13,7 +13,6 @@
 @interface FlickrTagTVC () <UITableViewDataSource>
 @property (nonatomic, strong) NSArray *photos; // of NSDictionary
 @property (nonatomic, strong) NSMutableArray *allTags; // of NSDictionary
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -22,16 +21,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
-    [view addSubview:self.spinner]; // <-- Your UIActivityIndicatorView
-    self.tableView.tableHeaderView = view;
-    [self.spinner startAnimating];
+    [self loadLatestTags];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadLatestTags)
+                  forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)loadLatestTags
+{
+    [self.refreshControl beginRefreshing];
     dispatch_queue_t downloadQueue = dispatch_queue_create("get flickr data", NULL);
     dispatch_async(downloadQueue, ^{
         self.photos = [FlickrFetcher stanfordPhotos];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.tags = [self parseTags];
-            [self.spinner stopAnimating];
+            [self.refreshControl endRefreshing];
         });
     });
 }
